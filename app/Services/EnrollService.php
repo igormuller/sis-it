@@ -27,7 +27,7 @@ class EnrollService
         if ($this->room->serie->age > $studentAge)
             throw new Exception('Idade não permitida');
         
-        StudentRoom::create([
+        return StudentRoom::create([
             'student_id' => $student->id,
             'room_id' => $this->room->id
         ]);

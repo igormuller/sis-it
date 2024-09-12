@@ -5,5 +5,31 @@
         </h2>
     </x-slot>
 
-    {{ __("You're logged in!") }}
+    <div class="grid grid-cols-2">
+        <div>
+            <table class="text-sm text-left rtl:text-right text-gray-500">
+                <tbody>
+                    @foreach($studentForSeries as $data)
+                    <tr>
+                        <th>Série {{ $data->name }}:</th>
+                        <th>{{ $data->total }} Alunos</th>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <table class="text-sm text-left rtl:text-right text-gray-500">
+                <tbody>
+                    @foreach($studentForRooms as $data)
+                    <tr>
+                        <th>Turma {{ $data->name }}:</th>
+                        <th>{{ $data->total }} Alunos</th>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </x-app-layout>
